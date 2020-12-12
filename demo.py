@@ -28,5 +28,19 @@ while(val != "q"):
     if val == "q":
         break
 
+val = ""
+prerequisite_courses = {}
+prerequisite_courses["course"] = {}
+# test case with CSCI 1301
+while(val != "q"):
+    if(courses["course"]["course_number"] == input_courses["course"]["course_number"]):
+        val = input("Did you take " + courses["course"]["prerequisite"] + " Y/N? or 'q' to quit \n")
+        if val == "q":
+            break
+        if val == "N":
+            # TODO get course WHERE course number matches prerequisite course number.
+            prerequisite_courses["course"]["course_number"] = courses["course"]["prerequisite"]
+            break
 
-print(courses)
+print("According to our analysis you should take: ")
+pprint.pprint(prerequisite_courses)
