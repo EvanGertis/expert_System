@@ -7,41 +7,31 @@ class prerequisite(Fact):
     pass
 
 
-class time_of_registration(Fact):
+class registration(Fact):
     pass
 
 
-class Registration(KnowledgeEngine):
+class KE(KnowledgeEngine):
     @Rule(
         AND(
-            OR(
-                prerequisite(course_name='MATH1441', grade='C'),
-                prerequisite(course_name='MATH1441', grade='B'),
-                prerequisite(course_name='MATH1441', grade='A')
-            ),
-            OR(
-                prerequisite(course_name='MATH2130', grade='C'),
-                prerequisite(course_name='MATH2130', grade='B'),
-                prerequisite(course_name='MATH2130', grade='A')
-            ),
-            OR(
-                prerequisite(course_name='CSCI1301', grade='C'),
-                prerequisite(course_name='CSCI1301', grade='B'),
-                prerequisite(course_name='CSCI1301', grade='A')
-            ),
-            time_of_registration(SEMESTER='F')
+            registration(course_name="CSCI5333", semester='F'),
+            prerequisite(course_name='MATH1441', grade=L('C') | L('B') | L('A')),
+            prerequisite(course_name='MATH2130', grade=L('C') | L('B') | L('A')),
+            prerequisite(course_name='CSCI1301', grade=L('C') | L('B') | L('A'))
         )
     )
     def can_register(self):
-        print("student can register")
+        print("registering")
 
 
-engine = Registration()
+engine = KE()
 engine.reset()
+course_no = input("please enter the course number that you wish to register for: \n")
+semester  = input("please enter the semester that you wish to register for S, SU, F or O: \n")
 engine.declare(
     prerequisite(course_name='MATH1441', grade='C'),
     prerequisite(course_name='MATH2130', grade='C'),
     prerequisite(course_name='CSCI1301', grade='C'),
-    time_of_registration(SEMESTER='F'))
+    registration(couse_name=course_no, semester=semester))
 engine.run()
 engine.can_register()
