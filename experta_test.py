@@ -61,4 +61,3 @@ engine.declare(CSCI_5333(
     SEMESTER=choice(['S','SU','F','O'])
     ))
 engine.run()
-engine.can_register()
