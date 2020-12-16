@@ -82,14 +82,15 @@ for line in transcript.readlines():
 #         Build Working Memory   #
 ##################################
 
-course_no = "CSCI3341"                #input("please enter the course number that you wish to register for: \n")
+course_no = "CSCI5333"                #input("please enter the course number that you wish to register for: \n")
 semester  = choice(['S','SU','F','O']) #input("please enter the semester that you wish to register for S, SU, F or O: \n")
 engine.how = True
+engine.declare(registration(course_name=course_no, semester=semester))
 
 
 ##################################
 #         Run Inference Engine   #
 ##################################
 
-print("Attempting to register for %s during semester %s " % ("CSCI5333", 'F'))
+print("Attempting to register for %s during semester %s " % (course_no, semester))
 engine.run()
