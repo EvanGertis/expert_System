@@ -1,5 +1,6 @@
 from experta import *
 from random import choice
+import sys
 import re
 # https://readthedocs.org/projects/experta/downloads/pdf/stable/
 
@@ -42,7 +43,7 @@ class KE(KnowledgeEngine):
     @Rule(
         AND(
             AS.registration  << registration(course_name="CSCI3341", semester='S'),
-            AS.prerequisite1 << prerequisite(course_name='CSCI2940', grade=L('C') | L('B') | L('A')),
+            AS.prerequisite1 << prerequisite(course_name='CSCI2490', grade=L('C') | L('B') | L('A')),
             AS.prerequisite2 << prerequisite(course_name='CSCI3230', grade=L('C') | L('B') | L('A')),
         )
     )
@@ -50,8 +51,7 @@ class KE(KnowledgeEngine):
         self, 
         registration, 
         prerequisite1,
-        prerequisite2,
-        prerequisite3):
+        prerequisite2):
         if(self.how == True):
             print("Since semester is ",registration['semester'])
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
@@ -68,29 +68,31 @@ engine = KE()
 engine.reset()
 transcript = open('transcript.txt', 'r')
 for line in transcript.readlines():
-    print(line)
-    print("__Reading transcript___")
     course_no_match = re.findall("([A-Z]{4} [0-9]{4})", line)
     grade_match = re.findall("( [A-Z]{1})", line)[0].replace(" ", "")
     if course_no_match and grade_match:
         course_no = course_no_match[0].replace(" ", "")
         grade = grade_match[0].replace(" ", "")
-        print("Adding course: ", course_no, "grade :", grade, "to Knowledge Base")
+        if sys.argv[1] == 'debug':
+            print("Adding course: ", course_no, "grade :", grade, "to Knowledge Base")
         engine.declare(prerequisite(course_name=course_no, grade=grade))
 
 ##################################
 #         Build Working Memory   #
 ##################################
 
-course_no = "CSCI5333"                #input("please enter the course number that you wish to register for: \n")
+course_no = "CSCI3341"                #input("please enter the course number that you wish to register for: \n")
 semester  = choice(['S','SU','F','O']) #input("please enter the semester that you wish to register for S, SU, F or O: \n")
-engine.how = True
+
+if sys.argv[1] == 'how':
+    engine.how = True
 engine.declare(registration(course_name=course_no, semester=semester))
 
 
 ##################################
 #         Run Inference Engine   #
 ##################################
-
+print()
+print()
 print("Attempting to register for %s during semester %s " % (course_no, semester))
 engine.run()
