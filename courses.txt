@@ -1,8 +1,0 @@
-CSCI 1301 Programming Principles I [O]
-4 Credit Hours. 3 Lecture Hours. 2 Lab Hours.
-Provides a fundamental understanding of the development of computer solutions to solve problems with emphasis on
-structured, top-down development and testing. Concepts include the following: an overview of computer system
-design, problem solving and procedural abstraction design of computer solutions, algorithm development using simple
-data types and control structures, implementation and testing of programmed problem solutions, design modularization
-using subprograms and structured and user-defined data types.
-Prerequisite(s): A minimum grade of "C" in MATH 1441.
