@@ -12,6 +12,9 @@ class prerequisite(Fact):
 class registration(Fact):
     pass
 
+class isAvaibleForRegistration(Fact):
+    pass
+
 
 class KE(KnowledgeEngine):
 
@@ -22,6 +25,7 @@ class KE(KnowledgeEngine):
             AS.registration  << registration(course_name="CSCI1301", semester='O'),
             AS.prerequisite1 << prerequisite(course_name='MATH1441', grade=L('C') | L('B') | L('A'))
         )
+        
     )
     def can_register_CSCI1301(
         self, 
@@ -272,8 +276,7 @@ class KE(KnowledgeEngine):
     )
     def can_register_CSCI4220(
         self, 
-        registration, 
-        prerequisite1):
+        registration):
         if(self.how == True):
             print("Since semester is ",registration['semester'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
@@ -715,7 +718,7 @@ class KE(KnowledgeEngine):
     
     @Rule(
         AND(
-            AS.registration  << registration(course_name="CSCI5436", semester='S'),
+            AS.registration  << registration(course_name="CSCI5436", semester='F'),
             AS.prerequisite1 << prerequisite(course_name='CSCI3432', grade=L('C') | L('B') | L('A'))
         )
     )
@@ -880,26 +883,24 @@ for line in transcript.readlines():
     if course_no_match and grade_match:
         course_no = course_no_match[0].replace(" ", "")
         grade = grade_match[0].replace(" ", "")
-        if sys.argv[1] == 'debug':
-            print("Adding course: ", course_no, "grade :", grade, "to Knowledge Base")
+        print("Reading course: ", course_no, "grade :", grade, " from transcript.txt")
         engine.declare(prerequisite(course_name=course_no, grade=grade))
 
 ##################################
 #         Build Working Memory   #
 ##################################
 
-course_no = "CSCI3341"                #input("please enter the course number that you wish to register for: \n")
-semester  = choice(['S','SU','F','O']) #input("please enter the semester that you wish to register for S, SU, F or O: \n")
+semester  = input("please enter the semester that you wish to register for S, SU, F or O: \n")
 
 if sys.argv[1] == 'how':
     engine.how = True
-engine.declare(registration(course_name=course_no, semester=semester))
+    courses = open("course_no.txt", 'r')
+    for course in courses.readlines():
+        print("We will check registration for course: %s semester: %s" % (course.rstrip(), semester))
+        engine.declare(registration(course_name=course.rstrip(), semester=semester))
 
 
 ##################################
 #         Run Inference Engine   #
 ##################################
-print()
-print()
-print("Attempting to register for %s during semester %s " % (course_no, semester))
 engine.run()
