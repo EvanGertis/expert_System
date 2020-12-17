@@ -968,29 +968,45 @@ class KE(KnowledgeEngine):
         
 engine = KE()
 engine.reset()
-transcript = open('transcript.txt', 'r')
-for line in transcript.readlines():
-    course_no_match = re.findall("([A-Z]{4} [0-9]{4})", line)
-    grade_match = re.findall("( [A-Z]{1})", line)[0].replace(" ", "")
-    if course_no_match and grade_match:
-        course_no = course_no_match[0].replace(" ", "")
-        grade = grade_match[0].replace(" ", "")
-        print("Reading course: ", course_no, "grade :", grade, " from transcript.txt")
-        engine.declare(prerequisite(course_name=course_no, grade=grade))
 
-##################################
-#         Build Working Memory   #
-##################################
+user_input = ""
 
-semester  = input("please enter the semester that you wish to register for S, SU, F or O: \n")
+while(user_input != "End!!"):
+    print("##################################")
+    print("#         Build Working Memory   #")
+    print("##################################")
+    transcript = open('transcript.txt', 'r')
+    for line in transcript.readlines():
+        course_no_match = re.findall("([A-Z]{4} [0-9]{4})", line)
+        grade_match = re.findall("( [A-Z]{1})", line)[0].replace(" ", "")
+        if course_no_match and grade_match:
+            course_no = course_no_match[0].replace(" ", "")
+            grade = grade_match[0].replace(" ", "")
+            print("Reading course: ", course_no, "grade :", grade, " from transcript.txt")
+            engine.declare(prerequisite(course_name=course_no, grade=grade))
+    print("##################################")
+    print("# Done Building Working Memory   #")
+    print("##################################")
+    print()
+    print("Enter 'End!!' at anytime to exit the program")
+    user_input  = input("please enter the semester that you wish to register for S, SU, F or O: \n")
 
-courses = open("course_no.txt", 'r')
-for course in courses.readlines():
-    print("We will check registration for course: %s semester: %s" % (course.rstrip(), semester))
-    engine.declare(registration(course_name=course.rstrip(), semester=semester))
+    if(user_input == "End!!"):
+        break
 
+    courses = open("course_no.txt", 'r')
+    for course in courses.readlines():
+        print("We will check registration for course: %s semester: %s" % (course.rstrip(), user_input))
+        engine.declare(registration(course_name=course.rstrip(), semester=user_input))
 
-##################################
-#         Run Inference Engine   #
-##################################
-engine.run()
+    print()
+    print("##################################")
+    print("# Results from Inference Engine  #")
+    print("##################################")
+    print()
+    engine.run()
+    print()
+    print("##################################")
+    print("# End of Results                 #")
+    print("##################################")
+    print()
