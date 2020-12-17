@@ -984,12 +984,10 @@ for line in transcript.readlines():
 
 semester  = input("please enter the semester that you wish to register for S, SU, F or O: \n")
 
-if sys.argv[1] == 'how':
-    engine.how = True
-    courses = open("course_no.txt", 'r')
-    for course in courses.readlines():
-        print("We will check registration for course: %s semester: %s" % (course.rstrip(), semester))
-        engine.declare(registration(course_name=course.rstrip(), semester=semester))
+courses = open("course_no.txt", 'r')
+for course in courses.readlines():
+    print("We will check registration for course: %s semester: %s" % (course.rstrip(), semester))
+    engine.declare(registration(course_name=course.rstrip(), semester=semester))
 
 
 ##################################
