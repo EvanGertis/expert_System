@@ -1,4 +1,6 @@
 from experta import *
+from experta import watchers
+import logging
 from random import choice
 import sys
 import re
@@ -968,7 +970,6 @@ class KE(KnowledgeEngine):
         
 engine = KE()
 engine.reset()
-
 user_input = ""
 
 while(user_input != "End!!"):
@@ -990,6 +991,14 @@ while(user_input != "End!!"):
     print()
     print("Enter 'End!!' at anytime to exit the program")
     user_input  = input("please enter the semester that you wish to register for S, SU, F or O: \n")
+
+    if(user_input == "End!!"):
+        break
+
+    how = input("Do you want to see the logical deduction of this program? enter 'how': \n")
+
+    if(how == "how"):
+        watchers.watch(level=logging.INFO)
 
     if(user_input == "End!!"):
         break
