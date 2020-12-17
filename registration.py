@@ -19,6 +19,7 @@ class isAvaibleForRegistration(Fact):
 class KE(KnowledgeEngine):
 
     how = False
+    results = open("results.txt", 'w')
 
     @Rule(
         AND(
@@ -35,8 +36,10 @@ class KE(KnowledgeEngine):
             print("Since semester is ",registration['semester'])
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
     
     @Rule(
         AND(
@@ -58,8 +61,10 @@ class KE(KnowledgeEngine):
             print("Since ", prerequisite2['course_name']," was passed with ", prerequisite2['grade'])
             print("Since ", prerequisite3['course_name']," was passed with ", prerequisite3['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
 
     @Rule(
         AND(
@@ -78,8 +83,10 @@ class KE(KnowledgeEngine):
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Since ", prerequisite2['course_name']," was passed with ", prerequisite2['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
     
     @Rule(
         AND(
@@ -95,8 +102,10 @@ class KE(KnowledgeEngine):
             print("Since semester is ",registration['semester'])
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
     
     @Rule(
         AND(
@@ -115,8 +124,10 @@ class KE(KnowledgeEngine):
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Since ", prerequisite2['course_name']," was passed with ", prerequisite2['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
     
     @Rule(
         AND(
@@ -132,8 +143,10 @@ class KE(KnowledgeEngine):
             print("Since semester is ",registration['semester'])
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
     # TODO: what to do about prior or concurrent enrollment
     @Rule(
         AND(
@@ -152,8 +165,10 @@ class KE(KnowledgeEngine):
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Since ", prerequisite2['course_name']," was passed with ", prerequisite2['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
     
     @Rule(
         AND(
@@ -172,8 +187,10 @@ class KE(KnowledgeEngine):
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Since ", prerequisite2['course_name']," was passed with ", prerequisite2['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
 
     @Rule(
         AND(
@@ -192,8 +209,10 @@ class KE(KnowledgeEngine):
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Since ", prerequisite2['course_name']," was passed with ", prerequisite2['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
 
     @Rule(
         AND(
@@ -212,8 +231,10 @@ class KE(KnowledgeEngine):
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Since ", prerequisite2['course_name']," was passed with ", prerequisite2['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
     
     @Rule(
         AND(
@@ -232,8 +253,10 @@ class KE(KnowledgeEngine):
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Since ", prerequisite2['course_name']," was passed with ", prerequisite2['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
     
     @Rule(
         AND(
@@ -249,8 +272,10 @@ class KE(KnowledgeEngine):
             print("Since semester is ",registration['semester'])
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
 
     @Rule(
         AND(
@@ -266,8 +291,10 @@ class KE(KnowledgeEngine):
             print("Since semester is ",registration['semester'])
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
     
     @Rule(
         AND(
@@ -280,8 +307,10 @@ class KE(KnowledgeEngine):
         if(self.how == True):
             print("Since semester is ",registration['semester'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
     
     @Rule(
         AND(
@@ -297,8 +326,10 @@ class KE(KnowledgeEngine):
             print("Since semester is ",registration['semester'])
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
     
     @Rule(
         AND(
@@ -314,8 +345,10 @@ class KE(KnowledgeEngine):
             print("Since semester is ",registration['semester'])
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
 
     @Rule(
         AND(
@@ -332,8 +365,10 @@ class KE(KnowledgeEngine):
             print("Since semester is ",registration['semester'])
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
     
     @Rule(
         AND(
@@ -349,8 +384,10 @@ class KE(KnowledgeEngine):
             print("Since semester is ",registration['semester'])
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
     
     @Rule(
         AND(
@@ -366,8 +403,10 @@ class KE(KnowledgeEngine):
             print("Since semester is ",registration['semester'])
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
     
     @Rule(
         AND(
@@ -383,8 +422,10 @@ class KE(KnowledgeEngine):
             print("Since semester is ",registration['semester'])
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
     
     @Rule(
         AND(
@@ -400,8 +441,10 @@ class KE(KnowledgeEngine):
             print("Since semester is ",registration['semester'])
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
     
     @Rule(
         AND(
@@ -417,8 +460,10 @@ class KE(KnowledgeEngine):
             print("Since semester is ",registration['semester'])
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
     
     @Rule(
         AND(
@@ -437,8 +482,10 @@ class KE(KnowledgeEngine):
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Since ", prerequisite2['course_name']," was passed with ", prerequisite1['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
     
     @Rule(
         AND(
@@ -454,8 +501,10 @@ class KE(KnowledgeEngine):
             print("Since semester is ",registration['semester'])
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
 
     @Rule(
         AND(
@@ -477,8 +526,10 @@ class KE(KnowledgeEngine):
             print("Since ", prerequisite2['course_name']," was passed with ", prerequisite2['grade'])
             print("Since ", prerequisite3['course_name']," was passed with ", prerequisite3['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
     
     @Rule(
         AND(
@@ -494,8 +545,10 @@ class KE(KnowledgeEngine):
             print("Since semester is ",registration['semester'])
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
 
     @Rule(
         AND(
@@ -511,8 +564,10 @@ class KE(KnowledgeEngine):
             print("Since semester is ",registration['semester'])
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
     
     @Rule(
         AND(
@@ -528,8 +583,10 @@ class KE(KnowledgeEngine):
             print("Since semester is ",registration['semester'])
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
     
     @Rule(
         AND(
@@ -545,8 +602,10 @@ class KE(KnowledgeEngine):
             print("Since semester is ",registration['semester'])
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
 
     @Rule(
         AND(
@@ -562,8 +621,10 @@ class KE(KnowledgeEngine):
             print("Since semester is ",registration['semester'])
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
 
     @Rule(
         AND(
@@ -582,8 +643,10 @@ class KE(KnowledgeEngine):
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Since ", prerequisite2['course_name']," was passed with ", prerequisite2['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
     
     @Rule(
         AND(
@@ -602,8 +665,10 @@ class KE(KnowledgeEngine):
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Since ", prerequisite2['course_name']," was passed with ", prerequisite2['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
     
     @Rule(
         AND(
@@ -622,8 +687,10 @@ class KE(KnowledgeEngine):
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Since ", prerequisite2['course_name']," was passed with ", prerequisite2['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
 
     @Rule(
         AND(
@@ -639,8 +706,10 @@ class KE(KnowledgeEngine):
             print("Since semester is ",registration['semester'])
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
     
     @Rule(
         AND(
@@ -656,8 +725,10 @@ class KE(KnowledgeEngine):
             print("Since semester is ",registration['semester'])
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
     
     @Rule(
         AND(
@@ -673,8 +744,10 @@ class KE(KnowledgeEngine):
             print("Since semester is ",registration['semester'])
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
 
     @Rule(
         AND(
@@ -693,8 +766,10 @@ class KE(KnowledgeEngine):
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Since ", prerequisite2['course_name']," was passed with ", prerequisite1['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
     
     @Rule(
         AND(
@@ -713,8 +788,10 @@ class KE(KnowledgeEngine):
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Since ", prerequisite2['course_name']," was passed with ", prerequisite1['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
     
     @Rule(
         AND(
@@ -730,8 +807,10 @@ class KE(KnowledgeEngine):
             print("Since semester is ",registration['semester'])
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
 
     @Rule(
         AND(
@@ -750,8 +829,10 @@ class KE(KnowledgeEngine):
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Since ", prerequisite2['course_name']," was passed with ", prerequisite2['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
     
     @Rule(
         AND(
@@ -767,8 +848,10 @@ class KE(KnowledgeEngine):
             print("Since semester is ",registration['semester'])
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
     
     @Rule(
         AND(
@@ -788,8 +871,10 @@ class KE(KnowledgeEngine):
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Since ", prerequisite2['course_name']," was passed with ", prerequisite2['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
 
     @Rule(
         AND(
@@ -808,8 +893,11 @@ class KE(KnowledgeEngine):
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Since ", prerequisite2['course_name']," was passed with ", prerequisite2['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
+
     @Rule(
         AND(
             AS.registration  << registration(course_name="CSCI5532", semester='F'),
@@ -824,8 +912,10 @@ class KE(KnowledgeEngine):
             print("Since semester is ",registration['semester'])
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
 
     # @Rule(
     #     AND(
@@ -867,8 +957,10 @@ class KE(KnowledgeEngine):
             print("Since ", prerequisite1['course_name']," was passed with ", prerequisite1['grade'])
             print("Since ", prerequisite2['course_name']," was passed with ", prerequisite2['grade'])
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
         else:
             print("Can register for: ",registration["course_name"]," during semester: ",registration['semester'])
+            self.results.write("Can register for: " + registration["course_name"] + " during semester: " + registration['semester'] + "\n")
 
 ##################################
 #         Build Knowledge Base   #
