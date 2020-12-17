@@ -998,6 +998,9 @@ while(user_input != "End!!"):
     how = input("Do you want to see the logical deduction of this program? enter 'how': \n")
 
     if(how == "how"):
+        print("##################################")
+        print("# Logical deduction will be show #")
+        print("##################################")
         watchers.watch(level=logging.INFO)
 
     if(user_input == "End!!"):
